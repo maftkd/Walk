@@ -37,6 +37,8 @@ public class WalkMan : MonoBehaviour
 		SnapStartingHeight();
 		_walkSpeed=_defaultWalkSpeed;
 		_colliders = new Collider[_maxColliders];
+		Cursor.visible=false;
+		Cursor.lockState = CursorLockMode.Locked;
     }
 	
 	void SnapStartingHeight(){
@@ -52,6 +54,16 @@ public class WalkMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+		//look
+		float mouseX = Input.GetAxis("Mouse X");
+		float mouseY = Input.GetAxis("Mouse Y");
+		transform.Rotate(Vector3.up*mouseX);
+		transform.Rotate(-Vector3.right*mouseY);
+		Vector3 eulers = transform.eulerAngles;
+		eulers.z=0;
+		transform.eulerAngles=eulers;
+
 		_flatForward=transform.forward;
 		_flatForward.y=0;
 		_flatForward.Normalize();
@@ -59,9 +71,11 @@ public class WalkMan : MonoBehaviour
 
 		//try movement
 		_movement = Vector3.zero;
-		_movement+=_flatForward*Input.GetAxis("Vertical")*Time.deltaTime*_walkSpeed;
-		_movement+=_flatRight*Input.GetAxis("Horizontal")*Time.deltaTime*_walkSpeed;
-		transform.position+=_movement;
+		_movement+=_flatForward*Input.GetAxis("Vertical");
+		_movement+=_flatRight*Input.GetAxis("Horizontal");
+		if(_movement.sqrMagnitude>1)
+			_movement.Normalize();
+		transform.position+=_movement*Time.deltaTime*_walkSpeed;
 
 		//check for wall
 		int numColliders= Physics.OverlapSphereNonAlloc(transform.position, 

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Stair
+  m_Name: Earth
   m_Shader: {fileID: 4800000, guid: 23ca16ab2527e4a65a4f705e31835148, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -73,7 +73,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
-    - _ColorB: {r: 0.14117648, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.48924452, b: 0.11792451, a: 1}
+    - _ColorB: {r: 0.10352943, g: 0.23584908, b: 0.043387335, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WallColor: {r: 1, g: 0.4198113, b: 0.4198113, a: 1}
+    - _WallColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}

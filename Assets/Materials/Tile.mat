@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ground
+  m_Name: Tile
   m_Shader: {fileID: 4800000, guid: 23ca16ab2527e4a65a4f705e31835148, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -76,3 +76,4 @@ Material:
     - _Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
     - _ColorB: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _WallColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
