@@ -19,7 +19,7 @@ public class WalkMan : MonoBehaviour
 	//speed
 	float _walkSpeed;
 	float _defaultWalkSpeed=5f;
-	float _yLerp=5f;
+	float _yLerp=10f;
 
 	//collision
 	Collider[] _colliders;
