@@ -31,6 +31,8 @@ public class WalkMan : MonoBehaviour
 	float _fallVel=0;
 	float _fallFactor=0;
 
+	int _lockState=1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,11 @@ public class WalkMan : MonoBehaviour
 		_colliders = new Collider[_maxColliders];
 		Cursor.visible=false;
 		Cursor.lockState = CursorLockMode.Locked;
+
+		//temp
+		Cursor.visible=true;
+		Cursor.lockState = CursorLockMode.None;
+		_lockState=0;
     }
 	
 	void SnapStartingHeight(){
@@ -54,6 +61,21 @@ public class WalkMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+		//disable stuff
+		if(Input.GetKeyDown(KeyCode.P)){
+			Cursor.visible=true;
+			Cursor.lockState = CursorLockMode.None;
+			_lockState=0;
+		}
+		if(Input.GetKeyDown(KeyCode.U)){
+			Cursor.visible=false;
+			Cursor.lockState = CursorLockMode.Locked;
+			_lockState=1;
+		}
+
+		if(_lockState==0)
+			return;
 
 		//look
 		float mouseX = Input.GetAxis("Mouse X");
